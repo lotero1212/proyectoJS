@@ -23,18 +23,3 @@ switch (true) {
             break;
 }
 
-// alert ("si ganaste " + partidasGanadas + " partidas y tienes " + cantCopas + " copas, tu ganancia diaria sera " + ((cantCopas * partidasGanadas ) +75));
-
-// if (cantCopas <= 1099) {
-//     alert ("Ganaras 4 SLP por partida ganada")
-// }
-
-// else if ((cantCopas >= 1100) && (cantCopas <= 1199)) {
-//     alert ("Ganaras 6 SLP por partida ganada")
-// }
-
-// else if (cantCopas >= 1200) {
-//     alert ("Ganaras 8 SLP por partida ganada")
-// }
-
-// alert ("si ganaste "+ partidasGanadas +  " partidas y tienes " + cantCopas + " copas, tu ganancia diaria sera " + SLPDiario);
