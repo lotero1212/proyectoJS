@@ -17,48 +17,36 @@ function mensaje() {
 }
 
 function iteracion(datoFormateado) {
-  while (datoFormateado != "salir" && flag) {
+  while (datoFormateado && flag) {
     switch (datoFormateado) {
       case "bitcoin":
         alert("el valor del bitcoin es  " + valorBTC + " USD");
-        flag = false;
+        mensaje();
         break;
 
       case "ethereum":
         alert("el valor del Ethereum es " + valorETH + " USD");
-        flag = false;
+        mensaje();
         break;
 
       case "dogecoin":
         alert("el valor del DogeCoin es " + valorDOGE + " USD");
-        flag = false;
+        mensaje();
+        break;
+
+      case "salir":
+        saludo();
         break;
 
       default:
         alert("Ingrese una moneda válida");
-        flag = false;
+        mensaje();
         break;
     }
   }
-  if (datoFormateado == "salir") {
-    alert("Muchas gracias, vuelvas prontos!");
-  } else {
-    mensaje();
-  }
 }
 
-// function iteracion(datoFormateado) {
-//   if (datoFormateado === "bitcoin") {
-//     alert("el valor del bitcoin es  " + valorBTC + " USD");
-//     mensaje();
-//   } else if (datoFormateado === "ethereum") {
-//     alert("el valor del Ethereum es " + valorETH + " USD");
-//     mensaje();
-//   } else if (datoFormateado === "dogecoin") {
-//     alert("el valor del DogeCoin es " + valorDOGE + " USD");
-//     mensaje();
-//   } else {
-//     alert("Ingrese una moneda válida");
-//     mensaje();
-//   }
-// }
+function saludo() {
+  alert("Muchas gracias, vuelvas prontos!");
+  flag = false;
+}
