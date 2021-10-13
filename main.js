@@ -22,20 +22,25 @@ let BTC = {
 coins.push(ETH);
 coins.push(BTC);
 
-printExchangeRates();
-
 function printExchangeRates() {
   coins.forEach((coin) => {
-    console.log(
-      usuario1.name +
-        " puede comprar " +
-        usuario1.balanceUSD / coin.value +
-        " " +
-        coin.name
+    alert(
+      "Podés comprar " + usuario1.balanceUSD / coin.value + " " + coin.name
     );
   });
 }
+
 inicio();
+
+function mensaje() {
+  let dato = prompt(
+    "¿de qué cripto querés conocer la cotización de hoy? (Bitcoin, Ethereum). Para cancelar ingresa la palabra SALIR"
+  );
+  let datoFormateado = dato.replace(/\s/g, "").toLowerCase();
+  flag = true;
+  iteracion(datoFormateado);
+}
+
 function inicio() {
   alert("Hola, bienvenido a Mailuck!");
   opcion = prompt(
@@ -43,49 +48,42 @@ function inicio() {
   );
   if (opcion == 1) {
     mensaje();
-    function mensaje() {
-      let dato = prompt(
-        "¿de qué cripto querés conocer la cotización de hoy? (Bitcoin, Ethereum). Para cancelar ingresa la palabra SALIR"
-      );
-      let datoFormateado = dato.replace(/\s/g, "").toLowerCase();
-      flag = true;
-      iteracion(datoFormateado);
-    }
-
-    function iteracion(datoFormateado) {
-      while (datoFormateado && flag) {
-        switch (datoFormateado) {
-          case "bitcoin":
-            alert("el valor del bitcoin es  " + value.BTC + " USD");
-            mensaje();
-            break;
-
-          case "ethereum":
-            alert("el valor del Ethereum es " + value.ETH + " USD");
-            mensaje();
-            break;
-
-          case "salir":
-            saludo();
-            break;
-
-          default:
-            alert("Ingrese una moneda válida");
-            mensaje();
-            break;
-        }
-      }
-    }
   } else if (opcion == 2) {
-    alert(
-      "Podes comprar " + usuario1.balanceUSD / coin.value + " " + coin.name
-    );
+    printExchangeRates();
   } else {
     alert("ingrese 1 o 2");
   }
 }
 
+function saludo() {
+  alert("Muchas gracias, vuelvas prontos!");
+  flag = false;
+}
 
+function iteracion(datoFormateado) {
+  while (datoFormateado && flag) {
+    switch (datoFormateado) {
+      case "bitcoin":
+        alert("el valor del bitcoin es  " + BTC.value + " USD");
+        mensaje();
+        break;
+
+      case "ethereum":
+        alert("el valor del Ethereum es " + ETH.value + " USD");
+        mensaje();
+        break;
+
+      case "salir":
+        saludo();
+        break;
+
+      default:
+        alert("Ingrese una moneda válida");
+        mensaje();
+        break;
+    }
+  }
+}
 
 // const valorBTC = 42000;
 // const valorETH = 2800;
