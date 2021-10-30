@@ -1,141 +1,118 @@
-const coins = [];
-let flag = true;
-class Usuario {
-  constructor(name, balanceUSD) {
+class Coin {
+  constructor(name, acronym, value) {
     this.name = name;
-    this.balanceUSD = balanceUSD;
+    this.acronym = acronym;
+    this.value = value;
   }
 }
 
-let usuario1 = new Usuario("Lucas", 1500);
+let coins = JSON.parse(localStorage.getItem("coins")) || [];
+let searchs = JSON.parse(localStorage.getItem("searchs")) || [];
 
-let ETH = {
-  name: "ethereum",
-  value: 3400,
+const getAll = () => {
+  return coins;
 };
 
-let BTC = {
-  name: "bitcoin",
-  value: 55400,
+const create = (newCoin) => {
+  coins.push(newCoin);
+  localStorage.setItem("coins", JSON.stringify(coins));
 };
 
-coins.push(ETH);
-coins.push(BTC);
+const findOne = (name) => {
+  name = name.toLowerCase();
+  const coin = coins.find((coin) => coin.name === name);
 
-printExchangeRates();
+  if (!coin) {
+    throw new Error(`No existe la cripto ${name}`);
+  }
 
-function printExchangeRates() {
-  coins.forEach((coin) => {
-    console.log(
-      usuario1.name +
-        " puede comprar " +
-        usuario1.balanceUSD / coin.value +
+  return coin;
+};
+
+const remove = (name) => {
+  const coin = findOne(name);
+  const index = coins.indexOf(coin);
+  coins.splice(index, 1);
+};
+
+const update = (name, acronym, value) => {
+  const coin = findOne(name);
+  coin.value = value;
+};
+
+const coinList = document.getElementById("coin-list");
+const formUser = document.getElementById("form-user");
+const nombreUsuario = document.getElementById("nombre-usuario");
+const usdUsuario = document.getElementById("usd-usuario");
+const monedaUsuario = document.getElementById("moneda-usuario");
+const nombreCriptoNew = document.getElementById("nombre-cripto-new");
+const siglaCriptoNew = document.getElementById("sigla-cripto-new");
+const cotizacionCriptoNew = document.getElementById("coticazion-cripto-new");
+const listaResultados = document.getElementById("lista-resultados");
+const formCoin = document.getElementById("form-coin");
+const botonConsultar = document.getElementById("boton-consultar");
+const botonAgregar = document.getElementById("boton-agregar");
+
+// Agregar perritos a la lista de perros para el browser
+for (let coin of coins) {
+  console.log(coin);
+  let itemCoin = document.createElement("li");
+  itemCoin.textContent = `${coin.acronym} ${coin.name} ${coin.value}`;
+  coinList.appendChild(itemCoin);
+}
+
+botonAgregar.onclick = function () {
+  const nombre = nombreCriptoNew.value;
+  const sigla = siglaCriptoNew.value;
+  const cotizacion = cotizacionCriptoNew.value;
+
+  const coin = new Coin(nombre, sigla, cotizacion);
+  create(coin);
+  console.log(getAll());
+};
+botonConsultar.onclick = function () {
+  const usuario = nombreUsuario.value;
+  const balance = usdUsuario.value;
+  const moneda = monedaUsuario.value;
+
+  let consulta = getConsulta(usuario, balance, moneda);
+  searchs.push(consulta);
+  localStorage.setItem("searchs", JSON.stringify(searchs));
+  for (let search of searchs) {
+    console.log(search);
+    let itemSearch = document.createElement("li");
+    itemSearch.textContent = search;
+    listaResultados.appendChild(itemSearch);
+  }
+  return false;
+};
+
+function getConsulta(usuario, balance, moneda) {
+  switch (moneda) {
+    case "Ethereum":
+      let eth = findOne("Ethereum");
+      let amountEth = balance / eth.value;
+      let consultaEth =
+        new Date() +
         " " +
-        coin.name
-    );
-  });
-}
-inicio();
-function inicio() {
-  alert("Hola, bienvenido a Mailuck!");
-  opcion = prompt(
-    "Ingresa 1 si queres conocer la cotización de alguna cripto; Ingresa 2 si querés saber qué podes comprar con tu balance actual"
-  );
-  if (opcion == 1) {
-    mensaje();
-    function mensaje() {
-      let dato = prompt(
-        "¿de qué cripto querés conocer la cotización de hoy? (Bitcoin, Ethereum). Para cancelar ingresa la palabra SALIR"
-      );
-      let datoFormateado = dato.replace(/\s/g, "").toLowerCase();
-      flag = true;
-      iteracion(datoFormateado);
-    }
+        usuario +
+        " puede comprar " +
+        amountEth +
+        " de " +
+        eth.name;
+      return consultaEth;
 
-    function iteracion(datoFormateado) {
-      while (datoFormateado && flag) {
-        switch (datoFormateado) {
-          case "bitcoin":
-            alert("el valor del bitcoin es  " + value.BTC + " USD");
-            mensaje();
-            break;
-
-          case "ethereum":
-            alert("el valor del Ethereum es " + value.ETH + " USD");
-            mensaje();
-            break;
-
-          case "salir":
-            saludo();
-            break;
-
-          default:
-            alert("Ingrese una moneda válida");
-            mensaje();
-            break;
-        }
-      }
-    }
-  } else if (opcion == 2) {
-    alert(
-      "Podes comprar " + usuario1.balanceUSD / coin.value + " " + coin.name
-    );
-  } else {
-    alert("ingrese 1 o 2");
+    case "Bitcoin":
+      let btc = findOne("Bitcoin");
+      let amountBtc = balance / btc.value;
+      let consultaBtc =
+        new Date() +
+        " " +
+        usuario +
+        " puede comprar " +
+        amountBtc +
+        " de " +
+        btc.name;
+      return consultaBtc;
   }
 }
-
-
-
-// const valorBTC = 42000;
-// const valorETH = 2800;
-// const valorDOGE = 0.2;
-// let flag = true;
-
-// mensaje();
-
-// function mensaje() {
-//   alert("Hola, bienvenido a MaiLuck!");
-//   let dato = prompt(
-//     "¿de qué cripto querés conocer la cotización de hoy? (Bitcoin, Ethereum, DogeCoin). Para cancelar ingresa la palabra SALIR"
-//   );
-
-//   let datoFormateado = dato.replace(/\s/g, "").toLowerCase();
-//   flag = true;
-//   iteracion(datoFormateado);
-// }
-
-// function iteracion(datoFormateado) {
-//   while (datoFormateado && flag) {
-//     switch (datoFormateado) {
-//       case "bitcoin":
-//         alert("el valor del bitcoin es  " + valorBTC + " USD");
-//         mensaje();
-//         break;
-
-//       case "ethereum":
-//         alert("el valor del Ethereum es " + valorETH + " USD");
-//         mensaje();
-//         break;
-
-//       case "dogecoin":
-//         alert("el valor del DogeCoin es " + valorDOGE + " USD");
-//         mensaje();
-//         break;
-
-//       case "salir":
-//         saludo();
-//         break;
-
-//       default:
-//         alert("Ingrese una moneda válida");
-//         mensaje();
-//         break;
-//     }
-//   }
-// }
-
-// function saludo() {
-//   alert("Muchas gracias, vuelvas prontos!");
-//   flag = false;
-// }

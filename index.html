@@ -1,16 +1,59 @@
 <!DOCTYPE html>
 <html lang="es">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
-    <script src="main.js"></script>
-</head>
-<body>
+  </head>
+  <body>
+    <h1>Calculá cuantas cripto podés comprar!</h1>
+    <form
+      id="form-user"
+      style="
+        border: orange;
+        border-width: 5px;
+        border-style: solid;
+        padding: 5px;
+      "
+    >
+      <p>Nombre</p>
+      <input id="nombre-usuario" autocomplete="off" type="text" />
 
-    <h1>Proyecto JavaScript</h1>
-    <p>Es un proyecto donde el usuario cuenta con un balance en USD y podrá conocer la cotización de las distintas criptomonedas y calcular cuánto puede comprar de cada cripto con su balance actual</p>
-    
-</body>
+      <p>Dinero disponible en USD</p>
+      <input id="usd-usuario" autocomplete="off" type="number" />
+
+      <br />
+
+      <label>Elegi una moneda:</label>
+      <select id="moneda-usuario">
+        <option value="Ethereum">Ethereum</option>
+        <option value="Bitcoin">Bitcoin</option>
+      </select>
+
+      <hr />
+
+      <div>
+        <button type="submit" id="boton-consultar">Consultar</button>
+      </div>
+    </form>
+    <h3>Cotización Cripto Hoy</h3>
+    <ul id="coin-list"></ul>
+    <h3>Agregá una nueva cripto</h3>
+    <form id="form-coin">
+      <label>Nombre</label>
+      <input type="text" id="nombre-cripto-new" autocomplete="off" />
+      <label>Sigla</label>
+      <input type="text" id="sigla-cripto-new" autocomplete="off" />
+      <label>Cotización</label>
+      <input type="text" id="coticazion-cripto-new" autocomplete="off" />
+      <div>
+        <button type="submit" id="boton-agregar">Agregar</button>
+      </div>
+    </form>
+
+    <h4>Últimas búsquedas realizadas</h4>
+    <ul id="lista-resultados"></ul>
+  </body>
+  <script src="main.js"></script>
 </html>
