@@ -33,6 +33,7 @@ const remove = (name) => {
   const coin = findOne(name);
   const index = coins.indexOf(coin);
   coins.splice(index, 1);
+  localStorage.setItem("coins", JSON.stringify(coins));
 };
 
 const update = (name, acronym, value) => {
@@ -53,12 +54,16 @@ const formCoin = document.getElementById("form-coin");
 const botonConsultar = document.getElementById("boton-consultar");
 const botonAgregar = document.getElementById("boton-agregar");
 
-// Agregar perritos a la lista de perros para el browser
 for (let coin of coins) {
   console.log(coin);
   let itemCoin = document.createElement("li");
-  itemCoin.textContent = `${coin.acronym} ${coin.name} ${coin.value}`;
+  itemCoin.innerHTML = `${coin.acronym} ${coin.name} ${coin.value} <span style= "cursor:pointer" id="${coin.name}">X</span>`;
   coinList.appendChild(itemCoin);
+
+  itemCoin.onclick = () => {
+    remove(coin.name);
+    document.location.reload();
+  };
 }
 
 botonAgregar.onclick = function () {
