@@ -1,3 +1,5 @@
+//localStorage.clear();
+
 class Coin {
   constructor(name, acronym, value) {
     this.name = name;
@@ -60,6 +62,10 @@ for (let coin of coins) {
   itemCoin.innerHTML = `${coin.acronym} ${coin.name} ${coin.value} <span style= "cursor:pointer" id="${coin.name}">X</span>`;
   coinList.appendChild(itemCoin);
 
+  let optionCoin = document.createElement("option");
+  optionCoin.textContent = coin.name;
+  monedaUsuario.appendChild(optionCoin);
+
   itemCoin.onclick = () => {
     remove(coin.name);
     document.location.reload();
@@ -92,32 +98,37 @@ botonConsultar.onclick = function () {
   return false;
 };
 
-function getConsulta(usuario, balance, moneda) {
-  switch (moneda) {
-    case "Ethereum":
-      let eth = findOne("Ethereum");
-      let amountEth = balance / eth.value;
-      let consultaEth =
-        new Date() +
-        " " +
-        usuario +
-        " puede comprar " +
-        amountEth +
-        " de " +
-        eth.name;
-      return consultaEth;
+function coinExist(coin) {
+  coinToLower = coin.toLowerCase();
+  coins.forEach((element) => {
+    if (coinToLower == element.name) {
+      console.log(element);
+    }
+  });
+}
 
-    case "Bitcoin":
-      let btc = findOne("Bitcoin");
-      let amountBtc = balance / btc.value;
-      let consultaBtc =
-        new Date() +
-        " " +
-        usuario +
-        " puede comprar " +
-        amountBtc +
-        " de " +
-        btc.name;
-      return consultaBtc;
-  }
+function getConsulta(usuario, balance, moneda) {
+  let coinToLower = moneda;
+  let elemento;
+  let amount;
+  let consulta;
+
+  coins.forEach((element) => {
+    if (coinToLower == element.name) {
+      elemento = element;
+    }
+  });
+
+  amount = balance / elemento.value;
+
+  consulta =
+    new Date() +
+    " " +
+    usuario +
+    " puede comprar " +
+    amount +
+    " de " +
+    elemento.name;
+
+  return consulta;
 }
