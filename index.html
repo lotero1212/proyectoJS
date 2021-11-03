@@ -8,7 +8,16 @@
     <title>Document</title>
   </head>
   <body>
-    <h1>Calculá cuantas cripto podés comprar!</h1>
+    <h1>&#128184;CALCUBIT 2.0 &#129297;</h1>
+    <h2>Calculá cuantas cripto podés comprar!</h2>
+    <p>
+      Ingresa tu nombre, cuánto USD disponés para operar y elegí la moneda que
+      desees.
+    </p>
+    <p>
+      Si la moneda en la cual estás interesado no aparece en el listado,
+      agregala previamente en la sección "agregá una nueva cripto"
+    </p>
     <form id="form-user">
       <p>Nombre</p>
       <input id="nombre-usuario" autocomplete="off" type="text" />
@@ -17,7 +26,7 @@
       <input id="usd-usuario" autocomplete="off" type="number" />
 
       <br />
-
+      <br />
       <label>Elegi una moneda:</label>
       <select id="moneda-usuario"></select>
 
@@ -37,6 +46,8 @@
       <input type="text" id="sigla-cripto-new" autocomplete="off" />
       <label>Cotización</label>
       <input type="text" id="coticazion-cripto-new" autocomplete="off" />
+      <br />
+      <br />
       <div>
         <button type="submit" id="boton-agregar">Agregar</button>
       </div>
@@ -44,6 +55,8 @@
 
     <h4>Últimas búsquedas realizadas</h4>
     <ul id="lista-resultados"></ul>
+
+    <button type="submit" id="boton-resetear">Reiniciar APP</button>
   </body>
   <script src="main.js"></script>
 </html>

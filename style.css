@@ -1,10 +1,24 @@
 form {
   border: 2px solid black;
   padding: 5px;
-
 }
 
 body {
   margin: 100px;
   text-align: center;
+}
+
+span {
+  border: 1px solid black;
+  padding: 4px;
+  border-radius: 20px;
+}
+
+span:hover {
+  background-color: lightgrey;
+}
+
+li {
+  list-style-type: none;
+  margin-top: 10px;
 }

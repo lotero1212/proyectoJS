@@ -21,7 +21,6 @@ const create = (newCoin) => {
 };
 
 const findOne = (name) => {
-  name = name.toLowerCase();
   const coin = coins.find((coin) => coin.name === name);
 
   if (!coin) {
@@ -55,11 +54,17 @@ const listaResultados = document.getElementById("lista-resultados");
 const formCoin = document.getElementById("form-coin");
 const botonConsultar = document.getElementById("boton-consultar");
 const botonAgregar = document.getElementById("boton-agregar");
+const botonResetear = document.getElementById("boton-resetear");
+
+botonResetear.onclick = function () {
+  localStorage.clear();
+  location.reload();
+};
 
 for (let coin of coins) {
   console.log(coin);
   let itemCoin = document.createElement("li");
-  itemCoin.innerHTML = `${coin.acronym} ${coin.name} ${coin.value} <span style= "cursor:pointer" id="${coin.name}">X</span>`;
+  itemCoin.innerHTML = `${coin.acronym} ${coin.name} ${coin.value} <span style= "cursor:pointer" id="${coin.name}">❌</span>`;
   coinList.appendChild(itemCoin);
 
   let optionCoin = document.createElement("option");
@@ -86,17 +91,20 @@ botonConsultar.onclick = function () {
   const balance = usdUsuario.value;
   const moneda = monedaUsuario.value;
 
+  if (coins.length == 0) {
+    alert("Primero agregá una cripto");
+  }
+
   let consulta = getConsulta(usuario, balance, moneda);
   searchs.push(consulta);
   localStorage.setItem("searchs", JSON.stringify(searchs));
-  for (let search of searchs) {
-    console.log(search);
-    let itemSearch = document.createElement("li");
-    itemSearch.textContent = search;
-    listaResultados.appendChild(itemSearch);
-  }
-  return false;
 };
+for (let search of searchs) {
+  console.log(search);
+  let itemSearch = document.createElement("li");
+  itemSearch.textContent = search;
+  listaResultados.appendChild(itemSearch);
+}
 
 function coinExist(coin) {
   coinToLower = coin.toLowerCase();
