@@ -6,6 +6,8 @@ form {
 body {
   margin: 100px;
   text-align: center;
+  background-color: black;
+  color: goldenrod;
 }
 
 span {
@@ -15,7 +17,7 @@ span {
 }
 
 span:hover {
-  background-color: lightgrey;
+  transform: scale(2);
 }
 
 li {

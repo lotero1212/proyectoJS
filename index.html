@@ -4,12 +4,13 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
     <link href="style.css" rel="stylesheet" type="text/css" />
-    <title>Document</title>
+    <title>Calcoin</title>
   </head>
   <body>
-    <h1>&#128184;CALCUBIT 2.0 &#129297;</h1>
-    <h2>Calculá cuantas cripto podés comprar!</h2>
+    <h1>&#128184; CALCOIN &#128184;</h1>
     <p>
       Ingresa tu nombre, cuánto USD disponés para operar y elegí la moneda que
       desees.
@@ -18,13 +19,44 @@
       Si la moneda en la cual estás interesado no aparece en el listado,
       agregala previamente en la sección "agregá una nueva cripto"
     </p>
+<div class="container-fluid">
+  <div class="row pb-5"> 
+    <div class="col">
+      <h4>Agregá una nueva cripto</h4>
+      <form id="form-coin">
+        <div class="form-floating mb-3 mt-3">
+          <input type="text" class="form-control" placeholder="Nombre" id="nombre-cripto-new" autocomplete="off" style="color:goldenrod; font-weight: bold"/>
+          <label for ="nombre-cripto-new" style="color:goldenrod;; font-weight: bold;">Nombre de la moneda</label>
+        </div>
+        <br>
+        <div class="form-floating mb-3 mt-3">
+          <input type="text" class="form-control" placeholder="Sigla" id="sigla-cripto-new" autocomplete="off" style="color:goldenrod; font-weight: bold"  />
+          <label for ="sigla-cripto-new" style="color:goldenrod; font-weight: bold">Sigla</label>
+        </div>
+        <br>
+        <div class="form-floating mb-3 mt-3">
+          <input type="text" class="form-control" placeholder="Cotización" id="coticazion-cripto-new" autocomplete="off" style="color:goldenrod; font-weight: bold" />
+          <label for ="coticazion-cripto-new" style="color:goldenrod; font-weight: bold">Cotización</label>
+        </div>
+        <br />
+        <div>
+          <button type="submit" id="boton-agregar" class="btn btn-light">Agregar</button>
+        </div>
+      </form>
+  </div>
+
+  <div class="col">
+    <h4>Calculá cuantas cripto podés comprar!</h4>
     <form id="form-user">
-      <p>Nombre</p>
-      <input id="nombre-usuario" autocomplete="off" type="text" />
+      <div class="form-floating mb-4 mt-4">
+        <input id="nombre-usuario" class="form-control" placeholder="Nombre" autocomplete="off" type="text" style="color:goldenrod; font-weight: bold" />
+        <label for="nombre-usuario" style="color:goldenrod; font-weight: bold">Nombre</label>
+      </div>
 
-      <p>Dinero disponible en USD</p>
-      <input id="usd-usuario" autocomplete="off" type="number" />
-
+      <div class="form-floating mb-4 mt-4">
+        <input id="usd-usuario" class="form-control" placeholder="Dinero disponible en USD" autocomplete="off" type="number" style="color:goldenrod; font-weight: bold" />
+        <label for="usd-usuario" style="color:goldenrod; font-weight: bold">Dinero disponible en USD</label>
+      </div>
       <br />
       <br />
       <label>Elegi una moneda:</label>
@@ -33,33 +65,30 @@
       <hr />
 
       <div>
-        <button type="submit" id="boton-consultar">Consultar</button>
+        <button type="submit" id="boton-consultar" class="btn btn-light">Consultar</button>
       </div>
     </form>
+  </div>
+  </div>
+
+  <div class="row">
+    <div class="col">
     <h3>Cotización Cripto Hoy</h3>
     <ul id="coin-list"></ul>
-    <h3>Agregá una nueva cripto</h3>
-    <form id="form-coin">
-      <label>Nombre</label>
-      <input type="text" id="nombre-cripto-new" autocomplete="off" />
-      <label>Sigla</label>
-      <input type="text" id="sigla-cripto-new" autocomplete="off" />
-      <label>Cotización</label>
-      <input type="text" id="coticazion-cripto-new" autocomplete="off" />
-      <br />
-      <br />
-      <div>
-        <button type="submit" id="boton-agregar">Agregar</button>
-      </div>
-    </form>
-
+  </div>
+  <div class="col">
     <h4>Últimas búsquedas realizadas</h4>
     <ul id="lista-resultados"></ul>
-
+  </div>
+  <div class="col">
     <h4>Últimas compras realizadas</h4>
     <ul id="lista-compras"></ul>
+  </div>
+  </div>
+  </div>
 
-    <button type="submit" id="boton-resetear">Reiniciar APP</button>
+
+    <button type="submit" id="boton-resetear" class="btn btn-light">Reiniciar APP</button>
     <script src="
     https://code.jquery.com/jquery-3.5.1.min.js"></script>
   </body>

@@ -64,7 +64,7 @@ botonResetear.onclick = function () {
 for (let coin of coins) {
   console.log(coin);
   let itemCoin = document.createElement("li");
-  itemCoin.innerHTML = `${coin.acronym} ${coin.name} ${coin.value} <span style= "cursor:pointer" id="${coin.name}">❌</span>`;
+  itemCoin.innerHTML = ` 1 ${coin.acronym} (${coin.name}) vale ${coin.value} dólares <span style= "cursor:pointer" id="${coin.name}">❌</span>`;
   coinList.appendChild(itemCoin);
 
   let optionCoin = document.createElement("option");
@@ -102,8 +102,11 @@ botonConsultar.onclick = function () {
 for (let search of searchs) {
   console.log(search);
   let itemSearch = document.createElement("li");
+  let hr = document.createElement("hr");
   itemSearch.textContent = search;
+  itemSearch.appendChild = hr;
   listaResultados.appendChild(itemSearch);
+  listaResultados.appendChild(hr);
 }
 
 function coinExist(coin) {
@@ -129,8 +132,17 @@ function getConsulta(usuario, balance, moneda) {
 
   amount = balance / elemento.value;
 
-  consulta =
-    new Date() +
+  
+  let date = new Date();
+
+  const formatDate = (current_datetime)=>{
+      let formatted_date = current_datetime.getFullYear() + "-" + (current_datetime.getMonth() + 1) + "-" + current_datetime.getDate() + " " + current_datetime.getHours() + ":" + current_datetime.getMinutes() + ":" + current_datetime.getSeconds();
+      return formatted_date;
+  }
+
+  consulta=
+  formatDate(date)
+    +
     " " +
     usuario +
     " puede comprar " +
