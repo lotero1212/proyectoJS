@@ -17,7 +17,7 @@ form {
 
 h1{
   font-family: 'Prompt', sans-serif;
-  font-size: 6em;
+  font-size: 5.5em;
 }
 
 #crypto-IMG1{
@@ -56,6 +56,15 @@ span {
   border-radius: 20px;
 }
 
+#boton-resetear{
+  background-color: black; 
+  border-color: goldenrod;
+}
+
+button:hover{
+  opacity: 0.4;
+}
+  
 
 li {
   list-style-type: none;
