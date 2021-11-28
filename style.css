@@ -1,24 +1,41 @@
 form {
-  border: 2px solid black;
-  padding: 5px;
+   padding: 5px;
+}
+
+.row {
+    align-content: center;
+    align-items: center;
+}
+#bannerCripto{
+  width: 100%;
+  height: auto;
+}
+#crypto-IMG1{
+  width: 150px;
+  height: 150px;
+  float: left;
+}
+#crypto-IMG2{
+  width: 150px;
+  height: 150px;
+  float: right;
 }
 
 body {
-  margin: 100px;
   text-align: center;
   background-color: black;
   color: goldenrod;
 }
 
+footer {
+  margin-top: 100px;
+}
 span {
   border: 1px solid black;
   padding: 4px;
   border-radius: 20px;
 }
 
-span:hover {
-  transform: scale(2);
-}
 
 li {
   list-style-type: none;
