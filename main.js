@@ -64,7 +64,7 @@ botonResetear.onclick = function () {
 for (let coin of coins) {
   console.log(coin);
   let itemCoin = document.createElement("li");
-  itemCoin.innerHTML = ` 1 ${coin.acronym} (${coin.name}) vale ${coin.value} dólares <span style= "cursor:pointer" id="${coin.name}">❌</span>`;
+  itemCoin.innerHTML = ` 1 ${coin.acronym} (${coin.name}) vale ${coin.value} dólares. &nbsp &nbsp <i class="far fa-trash-alt" style= "cursor:pointer" id="${coin.name}"></i>`;
   coinList.appendChild(itemCoin);
 
   let optionCoin = document.createElement("option");
