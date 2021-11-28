@@ -6,7 +6,8 @@ fetch(URL)
   .then((compras) => {
     for (const compra of compras) {
       $("#lista-compras").prepend(`
-         <p>${compra.nombre} compró USD ${compra.usdGastado} en criptomonedas en las últimas 24hs.</p>  
+         <li style="text-align: center">${compra.nombre} compró USD ${compra.usdGastado} en criptomonedas en las últimas 24hs.</li> 
+         <hr/> 
       `);
     }
   });
