@@ -2,45 +2,45 @@ body {
   text-align: center;
   background-color: black;
   color: goldenrod;
-  font-family: 'PT Sans Narrow', sans-serif;
+  font-family: "PT Sans Narrow", sans-serif;
   font-size: 1em;
   align-items: center;
 }
 form {
-   padding: 5px;
+  padding: 5px;
 }
 .row {
-    align-content: center;
-    align-items: center;
+  align-content: center;
+  align-items: center;
 }
-#bannerCripto{
+#bannerCripto {
   width: 100%;
   height: auto;
 }
 @media screen and (max-width: 600px) {
-#mobile-display{
-  display: none;
-}
+  #mobile-display {
+    display: none;
+  }
 }
 
-h1{
-  font-family: 'Prompt', sans-serif;
+h1 {
+  font-family: "Prompt", sans-serif;
   font-size: 5.5em;
   text-align: center;
 }
 
-#crypto-IMG1{
+#crypto-IMG1 {
   width: 150px;
   height: 150px;
   float: left;
 }
-#crypto-IMG2{
+#crypto-IMG2 {
   width: 150px;
   height: 150px;
   float: right;
 }
 
-h3{
+h3 {
   font-size: 2.3em;
   text-align: center;
 }
@@ -59,17 +59,27 @@ span {
   border-radius: 20px;
 }
 
-#boton-resetear{
-  background-color: black; 
+#boton-resetear {
+  background-color: black;
   border-color: goldenrod;
 }
 
-button:hover{
+button:hover {
+  color: goldenrod;
   opacity: 0.4;
 }
-  
 
 li {
   list-style-type: none;
   margin-top: 10px;
+}
+
+a {
+  text-decoration: none;
+  color: goldenrod;
+}
+
+a:hover {
+  color: goldenrod;
+  opacity: 0.4;
 }

@@ -4,34 +4,64 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3"
+      crossorigin="anonymous"
+    />
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
+      crossorigin="anonymous"
+    ></script>
     <link href="style.css" rel="stylesheet" type="text/css" />
     <title>Calcoin</title>
-    <link rel="icon" type="image/x-icon" href="/img/btc.svg">
-    <script src="https://kit.fontawesome.com/96e29c02e4.js" crossorigin="anonymous"></script>
+    <link rel="icon" type="image/x-icon" href="/img/btc.svg" />
+    <script
+      src="https://kit.fontawesome.com/96e29c02e4.js"
+      crossorigin="anonymous"
+    ></script>
     <!-- fuentes -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=PT+Sans+Narrow&family=Prompt:wght@100&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=PT+Sans+Narrow&family=Prompt:wght@100&display=swap"
+      rel="stylesheet"
+    />
     <!-- -->
   </head>
   <header>
-    <img src="/img/bannerNew.png"  class="img-responsive" alt="bannerCripto" id="bannerCripto">
+    <img
+      src="/img/bannerNew.png"
+      class="img-responsive"
+      alt="bannerCripto"
+      id="bannerCripto"
+    />
   </header>
   <body>
-    <div class="row" >
+    <div class="row">
       <div class="col" id="mobile-display">
-        <img src="/img/undraw_crypto_flowers_re_dyqo.svg" alt="flowerscripto" class="img-responsive" id="crypto-IMG1">
+        <img
+          src="/img/undraw_crypto_flowers_re_dyqo.svg"
+          alt="flowerscripto"
+          class="img-responsive"
+          id="crypto-IMG1"
+        />
       </div>
       <div class="col">
         <h1>CALCOIN</h1>
       </div>
       <div class="col" id="mobile-display">
-        <img src="/img/undraw_crypto_portfolio_2jy5.svg" alt="flowerscripto" class="img-responsive" id="crypto-IMG2">
+        <img
+          src="/img/undraw_crypto_portfolio_2jy5.svg"
+          alt="flowerscripto"
+          class="img-responsive"
+          id="crypto-IMG2"
+        />
       </div>
     </div>
-      <p>
+    <p>
       Ingresa tu nombre, cuánto USD disponés para operar y elegí la moneda que
       desees.
     </p>
@@ -39,83 +69,160 @@
       Si la moneda en la cual estás interesado no aparece en el listado,
       agregala previamente en la sección "agregá una nueva cripto"
     </p>
-<div class="container-fluid">
-  <div class="row pb-5"> 
-    <div class="col">
-      <h4>Agregá una nueva cripto</h4>
-      <form id="form-coin">
-        <div class="form-floating mb-3 mt-3">
-          <input type="text" class="form-control" placeholder="Moneda" id="nombre-cripto-new" autocomplete="off" style="color:goldenrod; font-weight: bold"/>
-          <label for ="nombre-cripto-new" style="color:goldenrod;; font-weight: bold;">Moneda</label>
+    <div class="container-fluid">
+      <div class="row pb-5">
+        <div class="col">
+          <h4>Agregá una nueva cripto</h4>
+          <form id="form-coin">
+            <div class="form-floating mb-3 mt-3">
+              <input
+                type="text"
+                class="form-control"
+                placeholder="Moneda"
+                id="nombre-cripto-new"
+                autocomplete="off"
+                style="color: goldenrod; font-weight: bold"
+              />
+              <label
+                for="nombre-cripto-new"
+                style="color: goldenrod; font-weight: bold"
+                >Moneda</label
+              >
+            </div>
+            <br />
+            <div class="form-floating mb-3 mt-3">
+              <input
+                type="text"
+                class="form-control"
+                placeholder="Sigla"
+                id="sigla-cripto-new"
+                autocomplete="off"
+                style="color: goldenrod; font-weight: bold"
+              />
+              <label
+                for="sigla-cripto-new"
+                style="color: goldenrod; font-weight: bold"
+                >Sigla</label
+              >
+            </div>
+            <br />
+            <div class="form-floating mb-3 mt-3">
+              <input
+                type="text"
+                class="form-control"
+                placeholder="Cotización"
+                id="coticazion-cripto-new"
+                autocomplete="off"
+                style="color: goldenrod; font-weight: bold"
+              />
+              <label
+                for="coticazion-cripto-new"
+                style="color: goldenrod; font-weight: bold"
+                >Cotización</label
+              >
+            </div>
+            <br />
+            <div>
+              <button type="submit" id="boton-agregar" class="btn btn-light">
+                Agregar
+              </button>
+            </div>
+          </form>
         </div>
-        <br>
-        <div class="form-floating mb-3 mt-3">
-          <input type="text" class="form-control" placeholder="Sigla" id="sigla-cripto-new" autocomplete="off" style="color:goldenrod; font-weight: bold"  />
-          <label for ="sigla-cripto-new" style="color:goldenrod; font-weight: bold">Sigla</label>
-        </div>
-        <br>
-        <div class="form-floating mb-3 mt-3">
-          <input type="text" class="form-control" placeholder="Cotización" id="coticazion-cripto-new" autocomplete="off" style="color:goldenrod; font-weight: bold" />
-          <label for ="coticazion-cripto-new" style="color:goldenrod; font-weight: bold">Cotización</label>
-        </div>
-        <br />
-        <div>
-          <button type="submit" id="boton-agregar" class="btn btn-light">Agregar</button>
-        </div>
-      </form>
-  </div>
 
-  <div class="col">
-    <h4>Calculá cuántas cripto podés comprar!</h4>
-    <form id="form-user">
-      <div class="form-floating mb-4 mt-4">
-        <input id="nombre-usuario" class="form-control" placeholder="Nombre" autocomplete="off" type="text" style="color:goldenrod; font-weight: bold" />
-        <label for="nombre-usuario" style="color:goldenrod; font-weight: bold">Nombre</label>
+        <div class="col">
+          <h4>Calculá cuántas cripto podés comprar!</h4>
+          <form id="form-user">
+            <div class="form-floating mb-4 mt-4">
+              <input
+                id="nombre-usuario"
+                class="form-control"
+                placeholder="Nombre"
+                autocomplete="off"
+                type="text"
+                style="color: goldenrod; font-weight: bold"
+              />
+              <label
+                for="nombre-usuario"
+                style="color: goldenrod; font-weight: bold"
+                >Nombre</label
+              >
+            </div>
+
+            <div class="form-floating mb-4 mt-4">
+              <input
+                id="usd-usuario"
+                class="form-control"
+                placeholder="USD disponible"
+                autocomplete="off"
+                type="number"
+                style="color: goldenrod; font-weight: bold"
+              />
+              <label
+                for="usd-usuario"
+                style="color: goldenrod; font-weight: bold"
+                >USD disponible</label
+              >
+            </div>
+            <br />
+            <br />
+            <label>Elegi una moneda:</label>
+            <select id="moneda-usuario"></select>
+
+            <hr />
+
+            <div>
+              <button type="submit" id="boton-consultar" class="btn btn-light">
+                Consultar
+              </button>
+            </div>
+          </form>
+        </div>
       </div>
 
-      <div class="form-floating mb-4 mt-4">
-        <input id="usd-usuario" class="form-control" placeholder="USD disponible" autocomplete="off" type="number" style="color:goldenrod; font-weight: bold" />
-        <label for="usd-usuario" style="color:goldenrod; font-weight: bold">USD disponible</label>
+      <div class="row">
+        <div class="col">
+          <h3>Cotización Cripto Hoy</h3>
+          <div class="input-group mb-3 inputGroup-sizing-sm">
+            <input
+              type="text"
+              class="form-control"
+              placeholder="Buscá la cotización de tu moneda"
+              aria-label="Buscá la cotización de tu moneda"
+              aria-describedby="button-addon2"
+              onkeyup="findCrypto()"
+              id="find-Crypto"
+            />
+            <button class="btn btn-secondary" type="button" id="button-addon2">
+              <i class="fas fa-search"></i>
+            </button>
+          </div>
+
+          <ul id="coin-list"></ul>
+        </div>
+        <div class="col">
+          <h3>Últimas búsquedas realizadas</h3>
+          <ul id="lista-resultados"></ul>
+        </div>
+        <div class="col">
+          <h3>Últimas compras realizadas</h3>
+          <ul
+            id="lista-compras"
+            style="text-align: start; padding-inline-start: 0px"
+          ></ul>
+        </div>
       </div>
-      <br />
-      <br />
-      <label>Elegi una moneda:</label>
-      <select id="moneda-usuario"></select>
-
-      <hr />
-
-      <div>
-        <button type="submit" id="boton-consultar" class="btn btn-light">Consultar</button>
-      </div>
-    </form>
-  </div>
-  </div>
-
-  <div class="row">
-    <div class="col">
-    <h3>Cotización Cripto Hoy</h3>
-    <div class="input-group mb-3 inputGroup-sizing-sm ">
-      <input type="text" class="form-control" placeholder="Buscá la cotización de tu moneda" aria-label="Buscá la cotización de tu moneda" aria-describedby="button-addon2">
-      <button class="btn btn-secondary" type="button" id="button-addon2"><i class="fas fa-search"></i></button>
     </div>
-    
-    <ul id="coin-list"></ul>
-  </div>
-  <div class="col">
-    <h3>Últimas búsquedas realizadas</h3>
-    <ul id="lista-resultados"></ul>
-  </div>
-  <div class="col">
-    <h3>Últimas compras realizadas</h3>
-    <ul id="lista-compras" style="text-align: start; padding-inline-start: 0px;"></ul>
-  </div>
-  </div>
-  </div>
 
-<br>
-<br>
+    <br />
+    <br />
 
-    <button type="submit" id="boton-resetear" class="btn btn-light" title="Reiniciar APP">
+    <button
+      type="submit"
+      id="boton-resetear"
+      class="btn btn-light"
+      title="Reiniciar APP"
+    >
       <i class="fas fa-redo-alt" style="color: goldenrod"></i>
     </button>
     <script src="
@@ -123,7 +230,12 @@
   </body>
 
   <footer>
-    <img src="/img/bannerNew.png"  class="img-responsive" alt="bannerCripto" id="bannerCripto">
+    <img
+      src="/img/bannerNew.png"
+      class="img-responsive"
+      alt="bannerCripto"
+      id="bannerCripto"
+    />
   </footer>
 
   <script src="https://code.jquery.com/jquery-3.5.1.js"></script>

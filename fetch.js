@@ -1,6 +1,6 @@
 // para que funcione ejecutar npm run server en terminal
 const URL = "http://localhost:3000/compras";
- 
+
 fetch(URL)
   .then((response) => response.json())
   .then((compras) => {

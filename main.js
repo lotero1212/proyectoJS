@@ -1,5 +1,3 @@
-//localStorage.clear();
-
 class Coin {
   constructor(name, acronym, value) {
     this.name = name;
@@ -64,7 +62,7 @@ botonResetear.onclick = function () {
 for (let coin of coins) {
   console.log(coin);
   let itemCoin = document.createElement("li");
-  itemCoin.innerHTML = ` 1 ${coin.acronym} (${coin.name}) vale ${coin.value} dólares. &nbsp &nbsp <i class="far fa-trash-alt" style= "cursor:pointer" id="${coin.name}"></i>`;
+  itemCoin.innerHTML = ` <a href="#"> 1 ${coin.acronym} (${coin.name}) vale ${coin.value} dólares. &nbsp &nbsp <i class="far fa-trash-alt" style= "cursor:pointer" id="${coin.name}"></i></a>`;
   coinList.appendChild(itemCoin);
 
   let optionCoin = document.createElement("option");
@@ -132,17 +130,26 @@ function getConsulta(usuario, balance, moneda) {
 
   amount = balance / elemento.value;
 
-  
   let date = new Date();
 
-  const formatDate = (current_datetime)=>{
-      let formatted_date = current_datetime.getFullYear() + "-" + (current_datetime.getMonth() + 1) + "-" + current_datetime.getDate() + " " + current_datetime.getHours() + ":" + current_datetime.getMinutes() + ":" + current_datetime.getSeconds();
-      return formatted_date;
-  }
+  const formatDate = (current_datetime) => {
+    let formatted_date =
+      current_datetime.getFullYear() +
+      "-" +
+      (current_datetime.getMonth() + 1) +
+      "-" +
+      current_datetime.getDate() +
+      " " +
+      current_datetime.getHours() +
+      ":" +
+      current_datetime.getMinutes() +
+      ":" +
+      current_datetime.getSeconds();
+    return formatted_date;
+  };
 
-  consulta=
-  formatDate(date)
-    +
+  consulta =
+    formatDate(date) +
     " " +
     usuario +
     " puede comprar " +
@@ -151,4 +158,22 @@ function getConsulta(usuario, balance, moneda) {
     elemento.name;
 
   return consulta;
+}
+
+function findCrypto() {
+  let input, filter, ul, li, a, i, txtValue;
+  input = document.getElementById("find-crypto");
+  filter = input.value.toUpperCase();
+  ul = document.getElementById("coin-list");
+  li = ul.getElementsByTagName("li");
+
+  for (i = 0; i < li.length; i++) {
+    a = li[i].getElementsByTagName("a")[0];
+    txtValue = a.textContent || a.innerText;
+    if (txtValue.toUpperCase().indexOf(filter) > -1) {
+      li[i].style.display = "";
+    } else {
+      li[i].style.display = "none";
+    }
+  }
 }
