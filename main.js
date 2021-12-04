@@ -8,6 +8,7 @@ class Coin {
 
 let coins = JSON.parse(localStorage.getItem("coins")) || [];
 let searchs = JSON.parse(localStorage.getItem("searchs")) || [];
+let coinsFromJson = [];
 
 const getAll = () => {
   return coins;
@@ -59,10 +60,25 @@ botonResetear.onclick = function () {
   location.reload();
 };
 
+$.getJSON("coins.json", function (coins) {
+  coinsFromJson = coins;
+
+  for (coin of coinsFromJson) {
+    console.log(coin);
+    let itemCoin = document.createElement("li");
+    itemCoin.innerHTML = ` <li> 1 ${coin.acronym} (${coin.name}) vale ${coin.value} dólares.</li>`;
+    coinList.appendChild(itemCoin);
+
+    let optionCoin = document.createElement("option");
+    optionCoin.textContent = coin.name;
+    monedaUsuario.appendChild(optionCoin);
+  }
+});
+
 for (let coin of coins) {
   console.log(coin);
   let itemCoin = document.createElement("li");
-  itemCoin.innerHTML = ` <a href="#"> 1 ${coin.acronym} (${coin.name}) vale ${coin.value} dólares. &nbsp &nbsp <i class="far fa-trash-alt" style= "cursor:pointer" id="${coin.name}"></i></a>`;
+  itemCoin.innerHTML = ` <li> 1 ${coin.acronym} (${coin.name}) vale ${coin.value} dólares. &nbsp &nbsp <i class="far fa-trash-alt" style= "cursor:pointer" id="${coin.name}"></i></li>`;
   coinList.appendChild(itemCoin);
 
   let optionCoin = document.createElement("option");
@@ -128,6 +144,12 @@ function getConsulta(usuario, balance, moneda) {
     }
   });
 
+  coinsFromJson.forEach((element) => {
+    if (coinToLower == element.name) {
+      elemento = element;
+    }
+  });
+
   amount = balance / elemento.value;
 
   let date = new Date();
@@ -158,22 +180,4 @@ function getConsulta(usuario, balance, moneda) {
     elemento.name;
 
   return consulta;
-}
-
-function findCrypto() {
-  let input, filter, ul, li, a, i, txtValue;
-  input = document.getElementById("find-crypto");
-  filter = input.value.toUpperCase();
-  ul = document.getElementById("coin-list");
-  li = ul.getElementsByTagName("li");
-
-  for (i = 0; i < li.length; i++) {
-    a = li[i].getElementsByTagName("a")[0];
-    txtValue = a.textContent || a.innerText;
-    if (txtValue.toUpperCase().indexOf(filter) > -1) {
-      li[i].style.display = "";
-    } else {
-      li[i].style.display = "none";
-    }
-  }
 }

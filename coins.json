@@ -1,0 +1,57 @@
+[
+  {
+    "name": "Axie Infinity",
+    "value": 127.86,
+    "acronym": "AXS"
+  },
+  {
+    "name": "Cardano",
+    "value": 1.55,
+    "acronym": "ADA"
+  },
+  {
+    "name": "Tether",
+    "value": 1,
+    "acronym": "USDT"
+  },
+  {
+    "name": "Ethereum",
+    "value": 4235.03,
+    "acronym": "ETH"
+  },
+  {
+    "name": "Binance Coin",
+    "value": 597.06,
+    "acronym": "BNB"
+  },
+  {
+    "name": "Smooth Love Potion",
+    "value": 0.05033,
+    "acronym": "SLP"
+  },
+  {
+    "name": "Ripple",
+    "value": 0.924464,
+    "acronym": "XRP"
+  },
+  {
+    "name": "Bitcoin",
+    "value": 54010,
+    "acronym": "BTC"
+  },
+  {
+    "name": "Solana",
+    "value": 211.89,
+    "acronym": "SOL"
+  },
+  {
+    "name": "Cryptocars",
+    "value": 0.766787,
+    "acronym": "CCAR"
+  },
+  {
+    "name": "Cryptoplanes",
+    "value": 2.56,
+    "acronym": "CPAN"
+  }
+]
